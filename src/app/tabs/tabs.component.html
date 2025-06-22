@@ -1,0 +1,19 @@
+<h1 class="text-center">Tabs Task</h1>
+
+
+<div class="row">
+    <div class="col-md-4 offset-4">
+        <ul class="nav nav-pills">
+            <li class="nav-item" *ngFor="let s of skillsarr"
+             [ngClass]="{'active' : selectedskill === s.name}">
+                <a href="javascript:;" (click)="selectedskill = s.name" class="nav-link">{{s.name}}</a></li>
+        </ul>
+    </div>
+    <div class="col-md-6 offset-3">
+        <ng-container *ngFor="let s of skillsarr">
+        <div class="card" *ngIf="selectedskill === s.name">
+            <div class="card-body" [innerHTML]='s.content'></div>
+        </div>
+    </ng-container>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.moviecard{
+    height: 350px;
+    overflow: hidden;
+ img{
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+}
+.titleinfo {
+    position: absolute;
+    bottom: 0;
+    width: 98%;
+    background-color: rgb(5, 5, 51);
+    height: 30px;
+    color: #fff;
+    padding: 0 15px;
+    span{
+        padding: 7px;
+    }
+ }
+ .overview {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    height: 75%;
+    background-color: #fff;
+    transform: translateY(130%);
+    overflow-y: auto;
+    transition: all .4s ease-in-out;
+}
+figure:hover .overview{
+    transform: translateY(0);
+}
+}

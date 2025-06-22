@@ -1,0 +1,26 @@
+<h1 class="text-center">Movies Task</h1>
+
+
+<div class="row">
+    <div class="col-md-4 mb-3 pr-2 moviecard" *ngFor="let m of moviesArr">
+        <figure>
+            <img
+            src="https://image.tmdb.org/t/p/w300{{m.backdrop_path || m.poster_path}}"
+             [alt]="m.title || m.original_title"
+             [title]="m.title || m.original_title">
+            <figcaption>
+                <div class="titleinfo d-flex justify-content-between">
+                    {{m.title || m.original_title}} <span class="badge" [ngClass]="{
+                        'badge-success' : m.vote_average >=4,
+                        'badge-warning' : m.vote_average >=3 && m.vote_average < 4,
+                        'badge-danger' : m.vote_average < 3
+                    }">{{m.vote_average}}</span>
+                </div>
+                <div class="overview">
+                    <h4>{{m.title || m.original_title}}</h4>
+                    <p>{{m.overview}}</p>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+</div>
